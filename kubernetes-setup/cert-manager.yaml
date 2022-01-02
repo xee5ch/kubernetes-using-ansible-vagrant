@@ -1,6 +1,6 @@
 - hosts: localhost
   environment:
-    KUBECONFIG: ./output/config
+    KUBECONFIG: "{{ playbook_dir }}/output/config"
   vars:
     cert_manager_chart_ref: jetstack/cert-manager
     namespace: cert-manager

@@ -21,12 +21,12 @@
   register: join_command
 
 - name: Copy join command to local file
-  copy: content="{{ join_command.stdout_lines[0] }}" dest="./output/join-command"
+  copy: content="{{ join_command.stdout_lines[0] }}" dest="{{ playbook_dir }}/output/join-command"
   delegate_to: 127.0.0.1
   become: false
 
 - name: Copy kubeconfig to local file
   fetch:
     src: /home/vagrant/.kube/config
-    dest: ./output/config
+    dest: "{{ playbook_dir }}/output/config"
     flat: yes
