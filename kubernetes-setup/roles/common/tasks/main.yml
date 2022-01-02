@@ -41,7 +41,7 @@
     dest: "/etc/docker/daemon.json"
     mode: 0644
 
-- name: Restar docker
+- name: Restart docker
   systemd:
     state: restarted
     name: docker
